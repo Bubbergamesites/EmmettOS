@@ -43,22 +43,22 @@ small{display:block;margin-top:14px;color:#6f76b8;font-size:11px}
 </div>
 <script>
 /* ===== CONFIG: edit these two lines to match your GitHub repo ===== */
-const USER   = "YOUR_USER";
-const REPO   = "YOUR_REPO";
+const USER   = "Bubbergamesites";
+const REPO   = "EmmettOS";
 const BRANCH = "main";          // or a tag / commit hash (pinning a hash avoids stale CDN cache)
 const FOLDER = "";              // e.g. "emmettos/" if the parts live in a subfolder (keep trailing slash)
 /* ================================================================== */
 
 const PARTS = [
-  ["EmmettOS.part1.bin", 19491043],
-  ["EmmettOS.part2.bin", 19491043],
-  ["EmmettOS.part3.bin", 19491043],
-  ["EmmettOS.part4.bin", 19491043],
-  ["EmmettOS.part5.bin", 19491042]
+  ["EmmettOS.part1.bin", 19491024],
+  ["EmmettOS.part2.bin", 19491024],
+  ["EmmettOS.part3.bin", 19491024],
+  ["EmmettOS.part4.bin", 19491024],
+  ["EmmettOS.part5.bin", 19491022]
 ];
 const HOSTS = ["cdn.jsdelivr.net", "fastly.jsdelivr.net", "gcore.jsdelivr.net"];
 const TOTAL = PARTS.reduce((s, p) => s + p[1], 0);
-const CACHE = "emmettos-parts-v2";
+const CACHE = "emmettos-parts-v1";
 
 const $ = id => document.getElementById(id);
 const done = new Array(PARTS.length).fill(0);
