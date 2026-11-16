@@ -34,7 +34,7 @@ small{display:block;margin-top:14px;color:#6f76b8;font-size:11px}
 <div class="card">
   <div class="blob"></div>
   <h1>Emmett<b>OS</b></h1>
-  <p id="st">Starting…</p>
+  <p id="st">Starting...</p>
   <div class="bar"><i id="bar"></i></div>
   <div id="pct">0%</div>
   <div id="parts"></div>
@@ -69,7 +69,7 @@ function render(msg) {
   const got = done.reduce((a, b) => a + b, 0);
   const p = Math.min(100, got / TOTAL * 100);
   $("bar").style.width = p + "%";
-  $("pct").textContent = p.toFixed(0) + "%  ·  " + (got / 1048576).toFixed(1) + " / " + (TOTAL / 1048576).toFixed(1) + " MB";
+  $("pct").textContent = p.toFixed(0) + "%  :  " + (got / 1048576).toFixed(1) + " / " + (TOTAL / 1048576).toFixed(1) + " MB";
   segs.forEach((s, i) => { s.firstChild.style.width = Math.min(100, done[i] / PARTS[i][1] * 100) + "%"; });
   if (msg) $("st").textContent = msg;
 }
@@ -105,7 +105,7 @@ async function getPart(i) {
   for (let attempt = 0; attempt < HOSTS.length * 2; attempt++) {
     const host = HOSTS[attempt % HOSTS.length];
     try {
-      done[i] = 0; render(`Downloading part ${i + 1} of ${PARTS.length}…` + (attempt ? ` (retry via ${host})` : ""));
+      done[i] = 0; render(`Downloading part ${i + 1} of ${PARTS.length}...` + (attempt ? ` (retry via ${host})` : ""));
       const res = await fetch(urlFor(host, name), { mode: "cors" });
       if (!res.ok) throw new Error("HTTP " + res.status + " from " + host);
       const blob = await readStream(res, i);
@@ -128,7 +128,7 @@ async function boot() {
       try { blobs.push(await getPart(i)); segs[i].className = "ok"; }
       catch (e) { segs[i].className = "err"; throw e; }
     }
-    render("Assembling EmmettOS…");
+    render("Assembling EmmettOS...");
     const page = new Blob(blobs, { type: "text/html;charset=utf-8" });
     blobs.length = 0;
     render("Launching…");
