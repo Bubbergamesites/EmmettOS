@@ -50,15 +50,15 @@ const FOLDER = "";              // e.g. "emmettos/" if the parts live in a subfo
 /* ================================================================== */
 
 const PARTS = [
-  ["EmmettOS.part1.bin", 19491024],
-  ["EmmettOS.part2.bin", 19491024],
-  ["EmmettOS.part3.bin", 19491024],
-  ["EmmettOS.part4.bin", 19491024],
-  ["EmmettOS.part5.bin", 19491022]
+  ["EmmettOS.part1.bin", 19491043],
+  ["EmmettOS.part2.bin", 19491043],
+  ["EmmettOS.part3.bin", 19491043],
+  ["EmmettOS.part4.bin", 19491043],
+  ["EmmettOS.part5.bin", 19491042]
 ];
 const HOSTS = ["cdn.jsdelivr.net", "fastly.jsdelivr.net", "gcore.jsdelivr.net"];
 const TOTAL = PARTS.reduce((s, p) => s + p[1], 0);
-const CACHE = "emmettos-parts-v1";
+const CACHE = "emmettos-parts-v2";
 
 const $ = id => document.getElementById(id);
 const done = new Array(PARTS.length).fill(0);
