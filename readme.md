@@ -1,6 +1,6 @@
-# 💜 EmOS — a complete desktop operating system in a single HTML file
+# 💜 EmmettOS — a complete desktop operating system in a single HTML file
 
-> **EmOS 2.0** is a full desktop environment that runs entirely inside a web browser. It has a boot screen, user accounts and a lock screen, a windowed desktop with four virtual workspaces, a file system, a terminal, an AI assistant, 40+ apps, a retro-game emulator covering 38 systems, and a media suite. It all ships as **one `.html` file**. There is no server, no build step, no framework and no install.
+> **EmmettOS 2.0** is a full desktop environment that runs entirely inside a web browser. It has a boot screen, user accounts and a lock screen, a windowed desktop with four virtual workspaces, a file system, a terminal, an AI assistant, 40+ apps, a retro-game emulator covering 38 systems, and a media suite. It all ships as **one `.html` file**. There is no server, no build step, no framework and no install.
 
 Open the file and the OS boots.
 
@@ -31,7 +31,7 @@ Open the file and the OS boots.
 21. [Browser compatibility](#browser-compatibility)
 22. [Known limitations](#known-limitations)
 23. [Security notes for the author](#security-notes-for-the-author)
-24. [Hacking on EmOS](#hacking-on-emos)
+24. [Hacking on EmmettOS](#hacking-on-EmmettOS)
 25. [Credits](#credits)
 
 ---
@@ -40,7 +40,7 @@ Open the file and the OS boots.
 
 | | |
 |---|---|
-| **Name** | EmOS (window title: *EmOS*) |
+| **Name** | EmmettOS (window title: *EmmettOS*) |
 | **Version** | 2.0 |
 | **Format** | One self-contained HTML file (about 97 MB) |
 | **Stack** | Vanilla JavaScript, HTML and CSS. No dependencies and no build tools |
@@ -88,7 +88,7 @@ Serving over **HTTPS or localhost** (a *secure context*) is recommended. Camera,
 
 ### Multi-user system
 
-EmOS ships with three accounts:
+EmmettOS ships with three accounts:
 
 | Account | Role | Notes |
 |---|---|---|
@@ -111,7 +111,7 @@ Each user gets a **private home folder**, and the file system and terminal start
 
 ### Password handling
 
-Passwords are stored as **SHA-256 hashes** with a fixed `emos` salt prefix, using the browser's Web Crypto API. Any plaintext password found in saved data is automatically hashed and removed on startup.
+Passwords are stored as **SHA-256 hashes** with a fixed `EmmettOS` salt prefix, using the browser's Web Crypto API. Any plaintext password found in saved data is automatically hashed and removed on startup.
 
 ---
 
@@ -185,7 +185,7 @@ Click the clock. It lists every notification with a timestamp and a **Clear** bu
 
 ### Session restore
 
-EmOS remembers your open windows, their positions and sizes, your desktop, your clipboard history, your notifications, your log and your current folders. After you sign in as the same user, it **reopens your workspace**. Turn this off or clear it in Settings → Session & storage. Minecraft is never auto-restored, because it is a heavy download.
+EmmettOS remembers your open windows, their positions and sizes, your desktop, your clipboard history, your notifications, your log and your current folders. After you sign in as the same user, it **reopens your workspace**. Turn this off or clear it in Settings → Session & storage. Minecraft is never auto-restored, because it is a heavy download.
 
 ---
 
@@ -255,14 +255,14 @@ A shell-style command line. See [The Terminal](#the-terminal).
 ### 💾 Backup
 - **Create restore points**: the last 3 are kept.
 - **Restore** from a point.
-- **Export** a `emos-backup.json` file and **import** one back.
+- **Export** a `EmmettOS-backup.json` file and **import** one back.
 - Backups cover the file system, calendar events, to-dos, notes, alarms and theme settings.
 
 ### 📜 Logs
 A rolling log of up to 150 entries (app launches, notifications, failed sign-ins). **Run diagnostics** checks 12 browser capabilities: localStorage, WebAssembly, WebGL, Clipboard, Web Audio, camera/WebRTC, Notifications, Web Bluetooth, Gamepad, Wake Lock, Fullscreen and secure context.
 
 ### 📋 Clipboard
-Keeps a **history of the last 20** things you copied or cut inside EmOS. You can re-copy any entry or import from the system clipboard.
+Keeps a **history of the last 20** things you copied or cut inside EmmettOS. You can re-copy any entry or import from the system clipboard.
 
 ### ✏️ Editor
 A plain-text editor with a path bar for saving anywhere, adjustable font size (12, 14, 16, 20), a live line, word and character count, `Tab` indentation and `Ctrl+S` to save.
@@ -468,7 +468,7 @@ High scores for several games persist across sessions.
 | 🕹 **Globby Chase** | A chase game (an embedded packaged build) |
 | 🏎 **F1 Random GP** | Race a **randomly generated F1-style circuit** over 3 laps. Customize the car's body and accent colors, with a minimap, speedometer, crash effects and lap timer. Arrows or WASD on desktop, and hold-to-gas with swipe steering on mobile. Made by Emmett. |
 | 🃏 **Solatro** | A poker-hand roguelike with antes, rounds, jokers, consumables and cash |
-| ⛏️ **Minecraft : EmOS** | An in-browser Minecraft-style client (Eaglercraft). It **downloads about 56 MB on first load** from a jsDelivr-hosted copy, so it needs the internet |
+| ⛏️ **Minecraft : EmmettOS** | An in-browser Minecraft-style client (Eaglercraft). It **downloads about 56 MB on first load** from a jsDelivr-hosted copy, so it needs the internet |
 
 ### Retro games
 
@@ -478,15 +478,15 @@ Anything you can load in the [Emulator](#the-emulator-38-systems).
 
 ## The Emulator (38 systems)
 
-EmOS bundles a full **EmulatorJS** build, with 45 WebAssembly emulator cores stored in the file itself (about 88 MB of the file's size). **No ROMs are included.** You supply your own game files. Once EmOS has loaded, emulation works fully offline.
+EmmettOS bundles a full **EmulatorJS** build, with 45 WebAssembly emulator cores stored in the file itself (about 88 MB of the file's size). **No ROMs are included.** You supply your own game files. Once EmmettOS has loaded, emulation works fully offline.
 
 ### How to play
 
 1. Open **Emulator** from the launcher or Store.
 2. **Drag and drop** a game file onto the window, or click to browse.
-3. EmOS detects the system from the extension. For ambiguous files (`.iso`, `.bin`, `.cue`, `.zip`, `.7z` and so on) it asks which system the file belongs to, with a sensible guess preselected. You can also choose the system yourself first.
+3. EmmettOS detects the system from the extension. For ambiguous files (`.iso`, `.bin`, `.cue`, `.zip`, `.7z` and so on) it asks which system the file belongs to, with a sensible guess preselected. You can also choose the system yourself first.
 
-Controls: **arrows** to move, **Z / X** for A / B, **Enter** for Start, **V** for Select. Remapping is in the in-game Control Settings, and **gamepads work automatically**. Save states and in-game saves are stored per game in your browser. The in-game UI is themed to match your EmOS accent color, and the emulator menus are available in many languages.
+Controls: **arrows** to move, **Z / X** for A / B, **Enter** for Start, **V** for Select. Remapping is in the in-game Control Settings, and **gamepads work automatically**. Save states and in-game saves are stored per game in your browser. The in-game UI is themed to match your EmmettOS accent color, and the emulator menus are available in many languages.
 
 ### Supported systems
 
@@ -538,7 +538,7 @@ A polished app store with a **Discover** page (featured hero carousel, *New & no
 - Screen resolution readout and a fullscreen toggle.
 
 ### Sound
-Master volume (applies to EmOS sounds, media and games), mute and a test tone.
+Master volume (applies to EmmettOS sounds, media and games), mute and a test tone.
 
 ### Personalization
 - **Accent color**: any color, and the whole UI re-themes.
@@ -562,8 +562,8 @@ Master volume (applies to EmOS sounds, media and games), mute and a test tone.
 
 ## Data, storage & backups
 
-- **Everything lives in your browser's `localStorage`**, namespaced under `emos`, `emos_fs`, `emos_bk`, `emos_img` and `emos_sess`.
-- The browser limit is roughly **5 MB**, and Settings shows your usage. If storage fills up, EmOS warns you instead of failing silently.
+- **Everything lives in your browser's `localStorage`**, namespaced under `EmmettOS`, `EmmettOS_fs`, `EmmettOS_bk`, `EmmettOS_img` and `EmmettOS_sess`.
+- The browser limit is roughly **5 MB**, and Settings shows your usage. If storage fills up, EmmettOS warns you instead of failing silently.
 - **Back up** with restore points (3 kept) and JSON export and import. Use these before clearing browser data.
 - Data is **per browser and per origin**. A copy of the file opened from a different location or host starts fresh.
 - **Factory reset** (Settings) or **Erase all data** (Security) wipes everything.
@@ -573,7 +573,7 @@ Master volume (applies to EmOS sounds, media and games), mute and a test tone.
 
 ## Architecture & file anatomy
 
-EmOS is a "hand-written" single-page application.
+EmmettOS is a "hand-written" single-page application.
 
 ```
 EmmettOS.html  (~97 MB)
@@ -625,7 +625,7 @@ Games run in a **sandboxed `iframe`**. The parent hands it a job record (file, c
 
 ## Network access & privacy
 
-EmOS keeps your files, settings and accounts **on your device**. There is no EmOS server and no telemetry. Some apps reach out to third-party services when you use them:
+EmmettOS keeps your files, settings and accounts **on your device**. There is no EmmettOS server and no telemetry. Some apps reach out to third-party services when you use them:
 
 | Feature | Service contacted |
 |---|---|
@@ -637,7 +637,7 @@ EmOS keeps your files, settings and accounts **on your device**. There is no EmO
 | BTunes metadata and lyrics | iTunes Search, Apple Marketing Tools, LRCLIB, lyrics.ovh |
 | BTube | YouTube (`youtube-nocookie.com`, thumbnails) |
 | BRadio | SomaFM |
-| Minecraft : EmOS | jsDelivr (about 56 MB, on first launch) |
+| Minecraft : EmmettOS | jsDelivr (about 56 MB, on first launch) |
 | Browser, Warp, SURGE, Netlii, BluSKY | Whatever sites you browse or services they use |
 
 Everything else, including the desktop, file system, terminal, editor, calculator, all the classic games, the emulator, Paint, notes, calendar and so on, works with **no connection at all**.
@@ -662,12 +662,12 @@ The **Logs → Run diagnostics** button tells you exactly which features your br
 ## Known limitations
 
 - **File size**: about 97 MB. Initial load takes a few seconds and uses real memory.
-- **~5 MB storage ceiling** for user data, because of `localStorage`. This is a browser limit, not an EmOS one.
+- **~5 MB storage ceiling** for user data, because of `localStorage`. This is a browser limit, not an EmmettOS one.
 - **Single-file, single-origin data**: data does not sync between browsers or devices unless you export and import a backup.
 - **Not a real OS or a security boundary**: accounts and the lock screen are a convenience and a demo. Anyone with access to the browser profile or the page's source can bypass them.
 - **No ROMs or BIOS files are included.** Some systems (PlayStation, Saturn, Sega CD, 3DO, PC-FX and others) generally need BIOS files to run many games.
 - **Minecraft** needs internet access on first load.
-- **Embedded third-party apps** (SURGE, Netlii, Warp and others) depend on external services, and their behavior is outside EmOS's control.
+- **Embedded third-party apps** (SURGE, Netlii, Warp and others) depend on external services, and their behavior is outside EmmettOS's control.
 - Some features depend on browser support: screen capture, Web Bluetooth, the Battery API and speech recognition.
 
 ---
@@ -684,7 +684,7 @@ A few things worth knowing before you publish or share this file:
 
 ---
 
-## Hacking on EmOS
+## Hacking on EmmettOS
 
 Since there is no build step, you can edit the file directly in any text editor. Be careful: the file is large, so use an editor that handles big files, and avoid touching the base64 blocks.
 
@@ -702,15 +702,15 @@ Handy things to know:
 
 ## Credits
 
-- **EmOS** by **Emmett** (OS, apps, F1 Random GP, BubberBot and the Bubber mascot).
+- **EmmettOS** by **Emmett** (OS, apps, F1 Random GP, BubberBot and the Bubber mascot).
 - **Emulation**: [EmulatorJS](https://emulatorjs.org) and the RetroArch/libretro cores.
 - **Radio**: [SomaFM](https://somafm.com).
 - **Weather data**: [Open-Meteo](https://open-meteo.com).
 - **Lyrics and metadata**: LRCLIB, lyrics.ovh, Apple iTunes Search.
-- **Warp** by BGS Labs; **Minecraft client** hosted from the `Bubbergamesites-EmOS` repository and based on Eaglercraft.
+- **Warp** by BGS Labs; **Minecraft client** hosted from the `Bubbergamesites-EmmettOS` repository and based on Eaglercraft.
 - Other embedded pages (SURGE, Netlii, BluSKY, Solatro, Globby Chase) belong to their respective creators.
 
-All trademarks (Minecraft, Nintendo, PlayStation, YouTube and others) belong to their owners. EmOS is an independent project and is not affiliated with or endorsed by them.
+All trademarks (Minecraft, Nintendo, PlayStation, YouTube and others) belong to their owners. EmmettOS is an independent project and is not affiliated with or endorsed by them.
 
 ---
 
