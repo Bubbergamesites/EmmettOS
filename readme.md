@@ -2,8 +2,8 @@
 
 > **EmmettOS 2.0** is a full desktop environment that runs entirely inside a web browser. It has a boot screen, user accounts and a lock screen, a windowed desktop with four virtual workspaces, a file system, a terminal, an AI assistant, 40+ apps, a retro-game emulator covering 38 systems, and a media suite. It all ships as **one `.html` file**. There is no server, no build step, no framework and no install.
 
-Open the file and the OS boots.
-
+EmmettOS.html : OS code (minus eaglercraft)<br>
+Loader.html : Memory efficient launcher for the OS via jsdelivr.
 ---
 
 ## Table of contents
