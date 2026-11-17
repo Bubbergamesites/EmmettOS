@@ -46,19 +46,19 @@ small{display:block;margin-top:14px;color:#6f76b8;font-size:11px}
 const USER   = "Bubbergamesites";
 const REPO   = "EmmettOS";
 const BRANCH = "main";          // or a tag / commit hash (pinning a hash avoids stale CDN cache)
-const FOLDER = "";              // e.g. "emmettos/" if the parts live in a subfolder (keep trailing slash)
+const FOLDER = "src-assets/";              // e.g. "emmettos/" if the parts live in a subfolder (keep trailing slash)
 /* ================================================================== */
 
 const PARTS = [
-  ["EmmettOS.part1.bin", 19491024],
-  ["EmmettOS.part2.bin", 19491024],
-  ["EmmettOS.part3.bin", 19491024],
-  ["EmmettOS.part4.bin", 19491024],
-  ["EmmettOS.part5.bin", 19491022]
+  ["EmmettOS.part1.bin", 19505839],
+  ["EmmettOS.part2.bin", 19505839],
+  ["EmmettOS.part3.bin", 19505839],
+  ["EmmettOS.part4.bin", 19505839],
+  ["EmmettOS.part5.bin", 19505839]
 ];
 const HOSTS = ["cdn.jsdelivr.net", "fastly.jsdelivr.net", "gcore.jsdelivr.net"];
 const TOTAL = PARTS.reduce((s, p) => s + p[1], 0);
-const CACHE = "emmettos-parts-v1";
+const CACHE = "emmettos-parts-v3";
 
 const $ = id => document.getElementById(id);
 const done = new Array(PARTS.length).fill(0);
@@ -109,7 +109,7 @@ async function getPart(i) {
       const res = await fetch(urlFor(host, name), { mode: "cors" });
       if (!res.ok) throw new Error("HTTP " + res.status + " from " + host);
       const blob = await readStream(res, i);
-      if (blob.size !== size) throw new Error(`part ${i + 1}: got ${blob.size} bytes, expected ${size}`);
+      if (blob.size !== size) throw new Error(`part ${i + 1} is ${blob.size} bytes but the loader expects ${size} - the uploaded parts and this loader are from different builds`);
       if (cache) { try { await cache.put("/__emmettos/" + name, new Response(blob)); } catch (e) {} }
       return blob;
     } catch (e) { lastErr = e; await new Promise(r => setTimeout(r, 600)); }
